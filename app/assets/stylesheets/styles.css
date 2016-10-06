@@ -1,0 +1,10 @@
+*{
+	margin: 0 auto;
+	padding: 0 auto;
+}
+#ctn{
+	margin-top: 100px;
+}
+.navbar{
+	background: #333;
+}
