@@ -5,14 +5,15 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
+            <a class="navbar-brand page-scroll" href="#">
                 <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                     <li><%= link_to "home", root_path %></li>
-                    <li><%= link_to "help", static_pages_help_path %></li>
+                    <li><%= link_to "help", help_path %></li>
+                    <li><%= link_to "Sign Up", signup_path %></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
