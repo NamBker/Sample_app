@@ -3,14 +3,19 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <link href="/assets/bootstrap.css" media="screen" rel="stylesheet" />
-    <link href="/assets/styles.css" media="screen" rel="stylesheet" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', media:'all', 'data-turbolinks-track' => true %>
   </head>
   <body>
     <%= render 'layouts/header' %>
-
     <div class="container" id="ctn">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <% end %>
           <%= yield %>
+        <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
+
+

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'static_pages/home'
   get 'help' => 'static_pages#help'
   get 'signup' => 'users#new'
-  get 'login' => 'users#index'
+  post 'signup' => 'users#create'
   resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
