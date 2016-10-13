@@ -14,7 +14,7 @@ $gray-medium-light: #eaeaea;
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box_sizing;
+  @include box_sizing(border-box);
 }
 
 
@@ -114,3 +114,26 @@ input {
   border-radius: 4px;
 }
 
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+.users {
+  list-style: none;
+  margin: 0;
+}
+.users  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+}
