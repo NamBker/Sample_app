@@ -8,13 +8,14 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(page: params[:page])
+     @users = User.paginate(page: params[:page])
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    
   end
 
   # GET /users/new
@@ -33,9 +34,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      # log_in @user
+      # UserMailer.account_activation(@user).deliver_now  
+       @user.send_activation_email
+      # flash[:success] = "Welcome to the Sample App!"
+      flash[:info] = "Please check your email to activate your account"
+      # redirect_to @user
+      redirect_to root_url
     else
       flash.now[:danger] =  'Invalid email/password combination'
       render 'new'
@@ -89,4 +94,9 @@ class UsersController < ApplicationController
      def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+   def authenticated?(attribute, token)
+      digest = send("#{attribute}_digest")
+      return false if digest.nil?
+      BCrypt::Password.new(digest).is_password?(token)
+  end
 end
