@@ -4,16 +4,15 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container" id="ctn">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-          <%= yield %>
-        <%= debug(params) if Rails.env.development? %>
-    </div>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <%= render 'layouts/admin' %>
+    <!-- jQuery 2.2.3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<%= javascript_include_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
+
+
   </body>
+
 </html>

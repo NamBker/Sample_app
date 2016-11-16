@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-require 'carrierwave/orm/activerecord'
 
   # GET /products
   # GET /products.json
@@ -17,7 +16,6 @@ require 'carrierwave/orm/activerecord'
   # GET /products/new
   def new
     @product = Product.new
-    @product.avatars  = params[:avatars] 
   end
 
   # GET /products/1/edit
@@ -27,13 +25,7 @@ require 'carrierwave/orm/activerecord'
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new
-    @product.category_id = params[:category_id]
-    @product.name = params[:name]
-    @product.description = params[:description]
-    @product.category = params[:category]
-    @product.avatar = params[:avatar]
-
+    @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -77,6 +69,6 @@ require 'carrierwave/orm/activerecord'
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:category_id, :name, :description, :category)
+      params.require(:product).permit(:category_id, :name, :description,:image, :category)
     end
 end

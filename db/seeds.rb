@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+  # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -9,11 +9,11 @@
 puts "Create User"
 User.create!(name:  "Example User",
              email: "admin@gmail.com",
-             password:              "admin1",
-             password_confirmation: "admin1",
+             password:              "123456",
+             password_confirmation: "123456",
              admin: true)
 
-puts "Faker 50 Users"
+puts "Faker 5 Users"
 5.times do |n|
   password = Faker::Internet.password
   User.create! name:  Faker::Name.name, email: Faker::Internet.email, password: password, password_confirmation: password,
@@ -26,9 +26,10 @@ Category.create name: "Love & Romance"
 Category.create name: "Wedding"
 Category.create name: "Corporate"
 
-puts "Faker 10 Products"
-10.times do
+puts "Faker 4 Products"
+4.times do
   Product.create name: Faker::Commerce.product_name, description: Faker::Lorem.sentence, 
-  category_id: Category.pluck(:id).sample, image: Faker::Avatar.image("my-own-slug", "50x50", "jpg")
-  end
+  category_id: Category.pluck(:id).sample, image: Faker::Avatar.image("my-own-slug", "50x50", "jpg") 
+end
+
 puts "Finish"

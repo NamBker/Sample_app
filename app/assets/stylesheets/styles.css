@@ -1,5 +1,6 @@
+@import "font-awesome";
 @import "bootstrap-sprockets";
-@import "bootstrap"; 
+@import "bootstrap";
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {

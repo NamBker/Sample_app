@@ -56,5 +56,6 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem "mini_magick"
 gem "rmagick"
 gem 'carrierwave'
-gem 'refile', :git => "git://github.com/rails/rails.git", :tag => "0.6.2", require: "refile/rails"
-gem "refile-mini_magick"
+gem "paperclip"
+
+gem "font-awesome-rails"
