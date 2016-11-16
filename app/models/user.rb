@@ -1,12 +1,6 @@
-# class User < ApplicationRecord
-# 	validates :name, presence: true
-# 	validates :email, presence: true
-# end
-
-# class User < ActiveRecord::Base
 class User < ApplicationRecord
-	attr_accessor :remember_token
 
+	attr_accessor :remember_token
 	before_save { self.email = email.downcase }
 	validates :name, presence: true, length: { maximum: 50 }
   	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -44,4 +38,5 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
 end

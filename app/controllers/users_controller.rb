@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-
-
   # GET /users
   # GET /users.json
   def index
@@ -20,7 +18,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    
   end
 
   # GET /users/1/edit
@@ -45,7 +42,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user = User.find(params[:id])  
+    @user = User.finds(params[:id])  
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -70,7 +67,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :phone,:address,:password, :password_confirmation)
     end
 
     def logged_in_user

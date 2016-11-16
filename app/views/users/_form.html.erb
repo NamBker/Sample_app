@@ -13,5 +13,10 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: 'form-control', :required => true %>
 
+  <%= f.label :image %>
+  <%= f.file_field :avatar, multiple: true %>
+
+
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

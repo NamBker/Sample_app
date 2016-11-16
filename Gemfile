@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'kaminari'
+gem 'pry'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -29,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -52,3 +53,8 @@ gem 'bcrypt'
 gem 'faker',          '1.6.6'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem "mini_magick"
+gem "rmagick"
+gem 'carrierwave'
+gem 'refile', :git => "git://github.com/rails/rails.git", :tag => "0.6.2", require: "refile/rails"
+gem "refile-mini_magick"
