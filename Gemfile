@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bcrypt-ruby', '~> 3.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
@@ -49,13 +49,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass'
-gem 'bcrypt'
 gem 'faker',          '1.6.6'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
-gem "mini_magick"
+gem  "mini_magick"
 gem "rmagick"
-gem 'carrierwave'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 gem "paperclip"
-
 gem "font-awesome-rails"

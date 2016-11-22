@@ -6,19 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Create User"
-User.create!(name:  "Example User",
-             email: "admin@gmail.com",
-             password:              "123456",
-             password_confirmation: "123456",
-             admin: true)
+# puts "Create User"
+# User.create name:  "Example User",
+#              email: "admin@gmail.com",
+#              password:              "123456",
+#              password_confirmation: "123456",
+#              admin: true
 
-puts "Faker 5 Users"
-5.times do |n|
-  password = Faker::Internet.password
-  User.create! name:  Faker::Name.name, email: Faker::Internet.email, password: password, password_confirmation: password,
-  	phone: Faker::PhoneNumber.cell_phone, address: Faker::Address.street_address
-end
+# puts "Faker 5 Users"
+# 5.times do |n|
+#   password = Faker::Internet.password
+#   User.create! name:  Faker::Name.name, email: Faker::Internet.email, password: password, password_confirmation: password,
+#   	phone: Faker::PhoneNumber.cell_phone, address: Faker::Address.street_address
+# end
 
 puts "Faker 4 Categories"
 Category.create name: "Baby"
